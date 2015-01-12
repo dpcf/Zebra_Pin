@@ -160,8 +160,8 @@
                     // reference to the current element
                     $element = $(this),
 
-                    // get the element's position relative to the document
-                    offset = $element.offset(),
+                    // get the element's position relative to the container
+                    offset = $element.parent().offset(),
 
                     // get the element's position relative to the offset parent
                     position = $element.position(),
@@ -280,8 +280,8 @@
                             $element.css({
 
                                 'position': 'absolute',
-                                'left': position.left,
-                                'top': position.top
+                                'left': '',
+                                'top': ''
 
                             // remove the class indicating that the element is pinned
                             }).removeClass(plugin.settings.class_name);
